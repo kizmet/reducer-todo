@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Layout } from "antd";
+import "antd/dist/antd.css";
+import "./App.css";
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
 
+const { Header, Content, Footer, Sider } = Layout;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Layout>
+      <Header>
+        <div className="logo">Todo's Reducer</div>
+      </Header>
+      <Layout>
+        <Sider width={200} style={{ background: "#fff" }}>
+          <TodoForm />
+        </Sider>
+
+        <Content
+          style={{
+            background: "#fff",
+            padding: 24,
+            margin: 0,
+            minHeight: 280
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <TodoList />
+        </Content>
+      </Layout>
+      <Footer style={{ textAlign: "center" }} />
+    </Layout>
   );
 }
 
