@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
-import "antd/dist/antd.css";
+
 import "./App.css";
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
@@ -8,7 +8,7 @@ import TodoForm from "./components/TodoForm";
 const { Header, Content, Footer, Sider } = Layout;
 function App() {
   return (
-    <Layout>
+    <Layout style={{ minHeight: "100vh" }}>
       <Header>
         <div className="logo">Todo's Reducer</div>
       </Header>

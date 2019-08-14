@@ -20,10 +20,9 @@ export const removeTodo = (todoId, dispatch) => {
   });
 };
 
-export const toggleTodo = (todoId, completed, dispatch) => {
+export const toggleTodo = (todoId, dispatch) => {
   dispatch({
     type: "TOGGLE_TODO",
-    todoId,
-    completed
+    todoId
   });
 };

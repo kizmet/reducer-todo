@@ -10,6 +10,11 @@ const initialState = {
       item: "Learn about reducers",
       completed: false,
       id: 12345678910
+    },
+    {
+      item: "Learn about reducers2",
+      completed: false,
+      id: 12345678912
     }
   ]
 };
@@ -26,8 +31,8 @@ const addTodo = (state, todoText) => {
 };
 
 const removeTodo = (state, todoId) => {
-  const newState = state.todos.filter(todo => todo.id !== todoId);
-  return { ...state, todos: newState };
+  const newTodos = state.todos.filter(todo => todo.id !== todoId);
+  return { ...state, todos: newTodos };
 };
 
 const clearCompleted = (state, todoId) => {
@@ -36,7 +41,7 @@ const clearCompleted = (state, todoId) => {
 };
 
 const toggleTodo = (state, todoId) => {
-  state.todos.map(todo => {
+  const newState = state.todos.map(todo => {
     if (todo.id === todoId) {
       return {
         ...todo,
@@ -46,6 +51,7 @@ const toggleTodo = (state, todoId) => {
       return todo;
     }
   });
+  return { ...state, todos: newState };
 };
 
 const reducer = (state, action) => {

@@ -9,3 +9,6 @@
   align-items: center;
   justify-content: center;
 }
+.status-true {
+  text-decoration: line-through;
+}
